@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sart — Documentation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0d0505;
+    color: #e8e8e8;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid #3a1a1a;
+  }
+  header h1 {
+    font-size: 3.5em;
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, #ff2d00, #ff9500, #ff2d00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px rgba(255,45,0,0.6);
+  }
+  header p { color: #999; font-style: italic; font-size: 1.1em; }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: #1a0f0f;
+    color: #aa8888;
+    border: 1px solid #3a1a1a;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .tab:hover { background: #2a1414; color: #ddd; }
+  .tab.active {
+    background: linear-gradient(135deg, #ff2d00, #ff9500);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(255,45,0,0.5);
+  }
+  .content {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #140808;
+    border: 1px solid #3a1a1a;
+    border-radius: 12px;
+    padding: 40px;
+  }
+  .doc { display: none; }
+  .doc.active { display: block; animation: fade 0.3s; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .doc p { margin-bottom: 18px; font-size: 1.05em; color: #d8d0d0; }
+  .doc code {
+    background: #0a0303;
+    color: #ff6b35;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    border: 1px solid #3a1a1a;
+  }
+  footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 40px;
+    border-top: 1px solid #3a1a1a;
+  }
+  footer strong { color: #ff6b35; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 2.2em; }
+    .content { padding: 20px; }
+    .tab { padding: 10px 16px; font-size: 0.9em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SART</h1>
+  <p>Documentação oficial · v0.1</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-lang="pt">🇧🇷 Português</button>
+  <button class="tab" data-lang="en">🇺🇸 English</button>
+  <button class="tab" data-lang="es">🇪🇸 Español</button>
+</div>
+
+<div class="content">
+
+  <div class="doc active" id="pt">
+    <p>O Sart é uma linguagem de programação interpretada, de extensão <code>.Sart</code>, criada com foco em texto, decisões, variáveis e desenhos. Sua proposta é oferecer uma sintaxe própria, original e independente, sem copiar estruturas de linguagens consagradas como Python, JavaScript ou C. Cada comando tem forma e nome próprios, o que dá à linguagem identidade clara e distinta de qualquer outra existente.</p>
+    <p>A estrutura de um arquivo Sart consiste em uma sequência de comandos escritos linha a linha. O arquivo é encerrado por um símbolo próprio, o <code>《</code>, que fica sozinho em uma linha, sempre no final do arquivo, precedido por duas linhas em branco. Esse símbolo nunca aparece no começo de uma linha, apenas como marcador de fim.</p>
+    <p>As importações podem ocorrer de duas formas. A primeira é a importação de texto, feita por meio do comando <code>//import = &lt;text&gt;</code>. A segunda é a importação de bibliotecas, feita por meio do comando <code>Import</code>, seguido do nome da biblioteca. O ponto faz parte do nome da biblioteca, e não funciona como separador de pacotes.</p>
+    <p>A impressão na tela é feita por meio do comando <code>/Class/text</code>, seguido do texto entre aspas. Esse comando já imprime diretamente, sem necessidade de chamada adicional, e é o principal meio de saída de texto da linguagem.</p>
+    <p>As variáveis armazenam valores e são declaradas por meio do operador <code>/&gt;</code>. A atribuição aceita tanto um número direto quanto um texto. Não há necessidade de declarar tipo previamente: a variável assume o valor que lhe for atribuído. Declarações de variável não utilizam ponto e vírgula.</p>
+    <p>A leitura de entrada do usuário é feita por meio do comando <code>#input_user</code>. Esse comando aparece sozinho, sem parâmetros, e o valor digitado pelo usuário entra diretamente na variável que está recebendo a atribuição por meio do operador <code>/&gt;</code>.</p>
+    <p>A estrutura condicional é aberta pelo comando <code>Alt</code>, que recebe uma condição e termina com ponto e vírgula. O bloco seguinte é executado caso a condição seja verdadeira. O comando <code>Shit:</code> marca o senão, e o bloco posterior a ele é executado caso a condição seja falsa.</p>
+    <p>O ponto e vírgula na Sart possui uma função única: marcar uma condição ou um valor. Ele nunca aparece em declaração de variável, nunca aparece sozinho em uma linha e nunca aparece duas vezes na mesma linha.</p>
+    <p>A Sart possui uma biblioteca oficial de desenho chamada <code>Pen.draw</code>, importada pelo comando <code>Import Pen.draw</code>. Essa biblioteca oferece comandos como <code>Pen.start</code>, que liga a caneta; <code>Drawforward.pen</code>, que desenha para frente e recebe como parâmetro a largura da linha; e <code>Pen.up</code>, <code>Pen.down</code>, <code>Pen.right</code> e <code>Pen.left</code>, que desenham, respectivamente, para cima, para baixo, para a direita e para a esquerda. O comando <code>Pen.stop</code> não existe na linguagem.</p>
+    <p>A linguagem é interpretada, o que significa que o código-fonte é lido e executado linha a linha, sem etapa prévia de tradução. Isso dá à Sart um caráter mais direto e experimental, adequado a scripts, protótipos e estudos de design de linguagens.</p>
+    <p>Diversos pontos da linguagem ainda não foram definidos formalmente. Entre eles estão: a existência de loops, a definição de funções pelo usuário, a presença de operadores aritméticos além do operador de comparação, a existência de outros operadores de comparação além do maior que, o suporte a listas ou arrays, a forma de salvar arquivos, a forma de importar código de outros arquivos .Sart e o comando de saída do programa.</p>
+    <p>Mesmo com essas definições em aberto, a Sart já possui identidade consolidada, com sintaxe própria, regras próprias e foco próprio. É uma linguagem pensada para quem quer programar com foco em texto e desenho, com comandos claros e com uma estética que remete a linguagens experimentais de verdade.</p>
+  </div>
+
+  <div class="doc" id="en">
+    <p>Sart is an interpreted programming language, with the <code>.Sart</code> extension, created with a focus on text, decisions, variables, and drawings. Its aim is to offer an original and independent syntax, without copying structures from established languages like Python, JavaScript, or C. Each command has its own form and name, giving the language a clear and distinct identity from any other.</p>
+    <p>The structure of a Sart file consists of a sequence of commands written line by line. The file is closed by its own symbol, <code>《</code>, which stands alone on a line, always at the end of the file, preceded by two blank lines. This symbol never appears at the beginning of a line, only as an end marker.</p>
+    <p>Imports can happen in two ways. The first is text import, done through the <code>//import = &lt;text&gt;</code> command. The second is library import, done through the <code>Import</code> command, followed by the library name. The dot is part of the library name and does not work as a package separator.</p>
+    <p>Printing to the screen is done using the <code>/Class/text</code> command, followed by the text in quotation marks. This command prints directly, without needing an additional call, and it's the language's main way of outputting text.</p>
+    <p>Variables store values and are declared using the <code>/&gt;</code> operator. Assignment accepts both a direct number and a text. There is no need to declare the type beforehand: the variable assumes the value assigned to it. Variable declarations do not use a semicolon.</p>
+    <p>User input is read through the <code>#input_user</code> command. This command stands alone, without parameters, and the value typed by the user goes directly into the variable receiving the assignment through the <code>/&gt;</code> operator.</p>
+    <p>The conditional structure is opened by the <code>Alt</code> command, which receives a condition and ends with a semicolon. The following block is executed if the condition is true. The <code>Shit:</code> command marks the else, and the block after it is executed if the condition is false.</p>
+    <p>The semicolon in Sart has a single function: marking a condition or a value. It never appears in a variable declaration, never appears alone on a line, and never appears twice on the same line.</p>
+    <p>Sart has an official drawing library called <code>Pen.draw</code>, imported by the <code>Import Pen.draw</code> command. This library offers commands such as <code>Pen.start</code>, which turns on the pen; <code>Drawforward.pen</code>, which draws forward and receives the line width as a parameter; and <code>Pen.up</code>, <code>Pen.down</code>, <code>Pen.right</code>, and <code>Pen.left</code>, which draw up, down, right, and left, respectively. The <code>Pen.stop</code> command does not exist in the language.</p>
+    <p>The language is interpreted, meaning the source code is read and executed line by line, without a prior translation step. This gives Sart a more direct and experimental character, suited to scripts, prototypes, and language design studies.</p>
+    <p>Several aspects of the language have not yet been formally defined. Among them are: the existence of loops, user-defined functions, the presence of arithmetic operators besides the comparison operator, the existence of other comparison operators besides greater than, support for lists or arrays, the way to save files, the way to import code from other .Sart files, and the program's exit command.</p>
+    <p>Even with these open definitions, Sart already has a consolidated identity, with its own syntax, rules, and focus. It's a language designed for those who want to program with a focus on text and drawing, with clear commands and an aesthetic reminiscent of real experimental languages.</p>
+  </div>
+
+  <div class="doc" id="es">
+    <p>Sart es un lenguaje de programación interpretado, con la extensión <code>.Sart</code>, creado con un enfoque en texto, decisiones, variables y dibujos. Su objetivo es ofrecer una sintaxis propia, original e independiente, sin copiar estructuras de lenguajes establecidos como Python, JavaScript o C. Cada comando tiene su propia forma y nombre, lo que le da al lenguaje una identidad clara y distinta de cualquier otro.</p>
+    <p>La estructura de un archivo Sart consiste en una secuencia de comandos escritos línea por línea. El archivo se cierra con un símbolo propio, <code>《</code>, que se encuentra solo en una línea, siempre al final del archivo, precedido por dos líneas en blanco. Este símbolo nunca aparece al comienzo de una línea, solo como marcador de fin.</p>
+    <p>Las importaciones pueden ocurrir de dos formas. La primera es la importación de texto, realizada mediante el comando <code>//import = &lt;text&gt;</code>. La segunda es la importación de bibliotecas, realizada mediante el comando <code>Import</code>, seguido del nombre de la biblioteca. El punto forma parte del nombre de la biblioteca y no funciona como separador de paquetes.</p>
+    <p>La impresión en pantalla se realiza mediante el comando <code>/Class/text</code>, seguido del texto entre comillas. Este comando imprime directamente, sin necesidad de una llamada adicional, y es la principal forma de generar texto en el lenguaje.</p>
+    <p>Las variables almacenan valores y se declaran mediante el operador <code>/&gt;</code>. La asignación acepta tanto un número directo como un texto. No es necesario declarar el tipo de antemano: la variable asume el valor que se le asigna. Las declaraciones de variables no usan punto y coma.</p>
+    <p>La lectura de entrada del usuario se realiza mediante el comando <code>#input_user</code>. Este comando aparece solo, sin parámetros, y el valor escrito por el usuario entra directamente en la variable que recibe la asignación mediante el operador <code>/&gt;</code>.</p>
+    <p>La estructura condicional se abre con el comando <code>Alt</code>, que recibe una condición y termina con un punto y coma. El bloque siguiente se ejecuta si la condición es verdadera. El comando <code>Shit:</code> marca el else, y el bloque posterior a él se ejecuta si la condición es falsa.</p>
+    <p>El punto y coma en Sart tiene una función única: marcar una condición o un valor. Nunca aparece en una declaración de variable, nunca aparece solo en una línea y nunca aparece dos veces en la misma línea.</p>
+    <p>Sart tiene una biblioteca oficial de dibujo llamada <code>Pen.draw</code>, importada mediante el comando <code>Import Pen.draw</code>. Esta biblioteca ofrece comandos como <code>Pen.start</code>, que enciende el lápiz; <code>Drawforward.pen</code>, que dibuja hacia adelante y recibe el ancho de la línea como parámetro; y <code>Pen.up</code>, <code>Pen.down</code>, <code>Pen.right</code> y <code>Pen.left</code>, que dibujan hacia arriba, hacia abajo, hacia la derecha y hacia la izquierda, respectivamente. El comando <code>Pen.stop</code> no existe en el lenguaje.</p>
+    <p>El lenguaje es interpretado, lo que significa que el código fuente se lee y se ejecuta línea por línea, sin una etapa previa de traducción. Esto le da a Sart un carácter más directo y experimental, adecuado para scripts, prototipos y estudios de diseño de lenguajes.</p>
+    <p>Varios aspectos del lenguaje aún no se han definido formalmente. Entre ellos están: la existencia de bucles, la definición de funciones por el usuario, la presencia de operadores aritméticos además del operador de comparación, la existencia de otros operadores de comparación además del mayor que, el soporte de listas o arrays, la forma de guardar archivos, la forma de importar código de otros archivos .Sart y el comando de salida del programa.</p>
+    <p>Aun con estas definiciones abiertas, Sart ya tiene una identidad consolidada, con su propia sintaxis, reglas y enfoque. Es un lenguaje diseñado para quienes desean programar con un enfoque en texto y dibujo, con comandos claros y con una estética que recuerda a los lenguajes experimentales reales.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p><strong>Sart</strong> — Linguagem de programação interpretada · v0.1</p>
+  <p>Criada por um garoto de 12 anos 🔥</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab');
+  const docs = document.querySelectorAll('.doc');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idioma = tab.dataset.lang;
+
+      tabs.forEach(t => t.classList.remove('active'));
+      docs.forEach(d => d.classList.remove('active'));
+
+      tab.classList.add('active');
+      document.getElementById(idioma).classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
